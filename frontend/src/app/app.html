@@ -1,0 +1,18 @@
+<h1>Welcome to Youtube Summarizer App</h1>
+<strong>Built with GenKit, Gemini and Angular</strong>
+<hr/>
+<form>  
+  <input placeholder="Youtube Video Url" type="text" id="videoUrl" style="padding:10px; margin-top: 2%;   min-width: 300px;" [(ngModel)]="videoUrl" name="videoUrl" placeholder="Enter YouTube video URL" />
+  &nbsp;&nbsp;
+  <button type="submit" style="padding:10px;" (click)="clickSummarize()">Summarize</button>
+</form>
+<hr/>
+<h2>Summary:</h2>
+<h3>{{summary()?.title}}</h3>
+<p>{{summary()?.summary}}</p>
+<ul>@for(s of summary()?.bullets; track s){<li>
+  {{s}}
+</li>}</ul>
+<hr/>
+{{mySummary?.bullets}}
+<router-outlet />

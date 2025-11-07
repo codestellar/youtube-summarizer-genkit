@@ -1,3 +1,8 @@
 .env
 .DS_Store
 node_modules/
+.genkit/
+dist/
+build/
+.vscode/
+.idea/
