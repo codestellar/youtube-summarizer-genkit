@@ -21,5 +21,14 @@ npm i
 ````
 npm run genkit:ui
 ````
+6. cd frontend and do npm i
+````
+npm i
+````
+7. Run Angular App
+````
+npm run start
+````
+
 
 ![demo](./images/demo.gif)

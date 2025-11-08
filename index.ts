@@ -203,8 +203,9 @@ const summarizeYouTube = ai.defineFlow(
           `Combine these bullets into a complete structured summary. ` +
           `Your output MUST strictly follow the provided JSON schema. ` +
           `The summary should be a paragraph combining all key points. ` +
-          `The 'bullets' field should be a consolidated list of the most important takeaways from all chunks.\n\n` +
-          `Source Bullet Points:\n${combinedBullets}`,
+          `The 'bullets' field should be a consolidated list of the most important takeaways from all chunks.\n\n` +          
+          `Source Bullet Points:\n${combinedBullets}`+
+          `\n\nTranslate result in English and Hindi`,
         // 🎯 IMPROVEMENT: Use the Zod schema to enforce structured output
         output: {
           schema: summarizeOutputSchema,

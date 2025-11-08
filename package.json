@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/codestellar/youtube-summarizer-genkit#readme",
   "dependencies": {
-    "@genkit-ai/express": "^1.21.0",
+    "@genkit-ai/express": "^1.22.0",
     "@genkit-ai/google-genai": "^1.21.0",
     "axios": "^1.13.0",
     "cors": "^2.8.5",

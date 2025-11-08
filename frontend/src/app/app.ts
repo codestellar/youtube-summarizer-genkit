@@ -18,8 +18,8 @@ export interface Summary {
 export class App {
   protected readonly title = signal('frontend');
 
-  summary = signal({'title': '', 'bullets': ['No summary'], 'summary': 'No Summary yet'});
-  mySummary : any;
+  summary = signal({'title': '', 'bullets': [], 'summary': ''});
+  loading = signal('');
   videoUrl = '';
 
 
@@ -30,6 +30,9 @@ export class App {
 
   clickSummarize() {
 
+    this.loading.set("Please wait! I am preparing the summary of the youtube video...")
+    this.summary.set({'title': '', 'bullets': [], 'summary': ''});
+
     this.httpClient
       .post('http://localhost:8080/api/summarize', { "data": {'urlOrId': this.videoUrl} })
       .subscribe({
@@ -37,10 +40,11 @@ export class App {
           const r = response?.result
           this.summary.set({'title': r?.title, 'bullets': r?.bullets, 'summary': r?.summary});
 
-          //this.mySummary = response?.bullets;
+          this.loading.set('');
         },
         error: (error) => {
           console.error('There was an error!', error);
+          this.loading.set('');
         },
         complete: () => {
           //this.summary = 'This is a dummy summary. Replace this with actual summary from backend.';
